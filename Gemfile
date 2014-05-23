@@ -1,5 +1,8 @@
 source 'https://rubygems.org'
 
+require 'capistrano/bundler'
+require 'capistrano/rbenv'
+require 'capistrano/rails/migrations'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.0'
@@ -14,6 +17,15 @@ gem 'coffee-rails', '~> 4.0.0'
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer',  platforms: :ruby
 gem 'capistrano', '~> 3.1.0'
+
+# rails specific capistrano funcitons
+gem 'capistrano-rails', '~> 1.1.0'
+
+# integrate bundler with capistrano
+gem 'capistrano-bundler'
+
+# if you are using RBENV
+gem 'capistrano-rbenv', "~> 2.0" 
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
@@ -31,7 +43,7 @@ gem 'spring',        group: :development
 # gem 'bcrypt', '~> 3.1.7'
 
 # Use unicorn as the app server
-# gem 'unicorn'
+ gem 'unicorn'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
@@ -39,3 +51,4 @@ gem 'spring',        group: :development
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
+Dir.glob('lib/capistrano/**/*.rb').each { |r| import r }

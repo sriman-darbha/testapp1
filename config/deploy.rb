@@ -2,14 +2,17 @@
 lock '3.1.0'
 
 set :application, 'testapp1'
+set :user, "sriman"
+set :scm_passphrase, "sriman"
 set :repo_url, 'https://github.com/sriman-darbha/testapp1'
-
+set :git_shallow_clone, 1
 # Default branch is :master
 # ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }
 
 # Default deploy_to directory is /var/www/my_app
  set :deploy_to, '/var/www/sample'
 
+ set :ssh_options, { :forward_agent => true }
 # Default value for :scm is :git
  set :scm, :git
 
