@@ -1,8 +1,8 @@
 source 'https://rubygems.org'
 
-require 'capistrano/bundler'
-require 'capistrano/rbenv'
-require 'capistrano/rails/migrations'
+#require 'capistrano/bundler'
+#require 'capistrano/rbenv'
+#require 'capistrano/rails/migrations'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.0'
@@ -51,4 +51,4 @@ gem 'spring',        group: :development
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
-Dir.glob('lib/capistrano/**/*.rb').each { |r| import r }
+#Dir.glob('lib/capistrano/**/*.rb').each { |r| import r }
